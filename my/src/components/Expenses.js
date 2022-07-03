@@ -3,6 +3,10 @@ import './Expenses.css'
 import Card from './Card'
 import Expenseitem from './Expenseitem';
 
+// here card is used as a parent of all because all components
+// are present inside the card to reomve repitition in css by
+// using props.children since card is custiom elements therfore css is added differently
+
 
 function Expenses() {
     const expenses = [
