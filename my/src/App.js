@@ -27,9 +27,14 @@ const expenses = [
 
 function App() 
 {
+
+    function  addexpensehandler(expense)
+    {
+     console.log(expense);
+    }
   
   return (<div>
-   <Newexpense/>
+   <Newexpense onaddexpense = {addexpensehandler}/>
   <Expenses item = {expenses}/>
   </div>);
 }
