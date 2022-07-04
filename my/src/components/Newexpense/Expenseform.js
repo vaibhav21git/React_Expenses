@@ -9,7 +9,6 @@ function Expenseform() {
     const [curramt,setcurramt] = useState('');
     const [currdate,setcurrdate] = useState('');
 
-
    const amtchangehandler = (event) => {
      setcurramt(event.target.value); 
    };
