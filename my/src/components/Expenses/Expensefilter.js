@@ -9,6 +9,9 @@ const Expensesfilter = (props) => {
        props.onChangeyear(event.target.value);
    }
 
+// here the expensefilter is controlled compononent because
+// it's option is controlled by parent component   
+
 
   return (
     <div className='expenses-filter'>
