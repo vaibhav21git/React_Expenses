@@ -1,4 +1,4 @@
- import React, { useState } from 'react'
+import React, { useState } from 'react'
 import './Expenses.css'
 import Card from '../UI/Card'
 import Expenseitem from './Expenseitem';
@@ -23,17 +23,24 @@ function Expenses(props) {
       {
          return expense.date.getFullYear().toString() === curryear;
       }) 
+
+      let expensecontent = <p>No expenses found</p>;
+      if(filteredexpenses.length > 0)
+      {
+        expensecontent =  filteredexpenses.map((expense)=><Expenseitem 
+        key = {expense.id} 
+        id  = {expense.id} 
+        title  ={expense.title}
+        amount = {expense.amount} 
+        date  = {expense.date}/>)
+      }
+
           
       return ( 
         <div>
       <Card className='expenses'>
       <Expensesfilter selected = {curryear} onChangeyear = {viewyear}/>
-            {filteredexpenses.map((expense)=>
-            {  return (<ul>
-              <li><Expenseitem key = {expense.id} id  = {expense.id} title  ={expense.title}
-               amount = {expense.amount} date  = {expense.date}/></li>
-              </ul>);
-            })}
+      {expensecontent}
       </Card>
       </div>
       );
